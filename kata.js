@@ -4,6 +4,8 @@ let playerTurn=document.querySelector(".turn");
 let resetButton=document.querySelector(".reset");
 let imgPos=document.querySelector(".imge");
 let victoryImage=document.createElement("img");
+let winningSound=new Audio("./vicAud.mp3");
+let clickSound=new Audio("./click12.aac");
  victoryImage.src="./victory.gif";
 
 
@@ -15,14 +17,14 @@ let victoryImage=document.createElement("img");
 let point="X";
 for(let i=0;i<gameBox.length;i++){
 gameBox[i].addEventListener('click',function(){
-    
+     clickSound.play();
    textBox[i].innerHTML=point;
    if(point=="X"){
        point="0";
-       playerTurn.innerHTML="TURN OF 0"
+       playerTurn.innerHTML="0's trun"
    }else{
        point="X"
-       playerTurn.innerHTML="TURN OF X"
+       playerTurn.innerHTML="X's turn "
    }
     let zero =textBox[0].innerHTML;
     let one =textBox[1].innerHTML;
@@ -48,67 +50,83 @@ gameBox[i].addEventListener('click',function(){
 
     if((zero=="X" && one=="X"&& two=="X") ){
         playerTurn.innerHTML="Player X won the game " 
+        winningSound.play();
         imgPos.appendChild(victoryImage);
         return;
     }else if((zero=="0" && one=="0"&& two=="0")){
         playerTurn.innerHTML="Player 0 won the game "
+        winningSound.play();
         imgPos.appendChild(victoryImage);
         return; 
     }else if((three=="X" && four=="X"&& five=="X") ){
         playerTurn.innerHTML="Player X won the game " 
         imgPos.appendChild(victoryImage);
+        winningSound.play();
         return;
     }else if((three=="0" && four=="0"&& five=="0")){
         playerTurn.innerHTML="Player 0 won the game " 
         imgPos.appendChild(victoryImage);
+        winningSound.play();
         return;
     }else if((six=="X" && seven=="X"&& eight=="X") ){
         playerTurn.innerHTML="Player X won the game " 
         imgPos.appendChild(victoryImage);
+        winningSound.play();
         return;
     }else if((six=="0" && seven=="0"&& eight=="0")){
         playerTurn.innerHTML="Player 0 won the game " 
         imgPos.appendChild(victoryImage);
+        winningSound.play();
         return;
     }else if((zero=="X" && four=="X"&& eight=="X") ){
         playerTurn.innerHTML="Player X won the game " 
         imgPos.appendChild(victoryImage);
+        winningSound.play();
         return;
     }else if((zero=="0" && four=="0"&& eight=="0")){
         playerTurn.innerHTML="Player 0 won the game " 
         imgPos.appendChild(victoryImage);
+        winningSound.play();
         return;
     }else if((two=="X" && four=="X"&& six=="X") ){
         playerTurn.innerHTML="Player X won the game " 
         imgPos.appendChild(victoryImage);
+        winningSound.play();
         return;
     }else if((two=="0" && four=="0"&& six=="0")){
         playerTurn.innerHTML="Player 0 won the game " 
         imgPos.appendChild(victoryImage);
+        winningSound.play();
         return;
     }else if((zero=="X" && three=="X"&& six=="X") ){
         playerTurn.innerHTML="Player X won the game " 
+        winningSound.play();
         imgPos.appendChild(victoryImage);
         return;
     }else if((zero=="0" && three=="0"&& six=="0")){
         playerTurn.innerHTML="Player 0 won the game "
         imgPos.appendChild(victoryImage); 
+        winningSound.play();
         return;
     }else if((one=="X" && four=="X"&& seven=="X") ){
         playerTurn.innerHTML="Player X won the game " 
         imgPos.appendChild(victoryImage);
+        winningSound.play();
         return;
     }else if((one=="0" && four=="0"&& seven=="0")){
         playerTurn.innerHTML="Player 0 won the game "
         imgPos.appendChild(victoryImage);
+        winningSound.play();
         return; 
     }else if((two=="X" && five=="X"&& eight=="X") ){
         playerTurn.innerHTML="Player X won the game " 
         imgPos.appendChild(victoryImage);
+        winningSound.play();
         return;
     }else if((two=="0" && five=="0"&& eight=="0")){
         playerTurn.innerHTML="Player 0 won the game " 
         imgPos.appendChild(victoryImage);
+        winningSound.play();
         return;
     }
     
@@ -123,8 +141,8 @@ resetButton.addEventListener("click",function(){
     for(let i=0;i<textBox.length;i++){
         textBox[i].innerHTML="";
     }
-    playerTurn.innerHTML="TURN OF X"
-    victoryImage.src="";
+    playerTurn.innerHTML="X's turn"
+    victoryImage.remove();
 })
 
 }
