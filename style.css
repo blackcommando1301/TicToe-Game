@@ -7,11 +7,12 @@
 
 .header{
     display: flex;
-   align-content: center;
+    justify-content: center;
+   /* align-content: center; */
    width: 100vw;
    height: 6vh;
-   padding-left:5rem ;
-   padding-top: 1.5rem;
+   /* padding-left:5rem ;
+   padding-top: 1.5rem; */
     /* margin-left: 30rem;  */
    font-size: 250%;
    background-color: darkgrey;
@@ -23,22 +24,22 @@
 
 .gameCont{
     display: flex;
-    justify-content:space-evenly;
+    justify-content:space-around;
     margin-top: 6rem;
     background-color: linen;
 
 }
 
 .cont{
-
+  
     display: grid;
-    grid-template-columns: repeat(3,8vw);
-    grid-template-rows: repeat(3,18vh);
+    grid-template-columns: repeat(3,13vw);
+    grid-template-rows: repeat(3,20vh);
 }
 .box{
     border: 1px solid black;
    
-    padding: 20px;
+    padding: 37%;
 }
 .boxtext{
     font-size: xx-large;
@@ -47,6 +48,7 @@
     background-color:#E6BA95;
 }
 .info{
+    width: 30vw;
 
 }
 .gamer{
