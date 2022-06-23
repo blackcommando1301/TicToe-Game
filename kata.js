@@ -21,7 +21,7 @@ gameBox[i].addEventListener('click',function(){
    textBox[i].innerHTML=point;
    if(point=="X"){
        point="0";
-       playerTurn.innerHTML="0's trun"
+       playerTurn.innerHTML="0's turn"
    }else{
        point="X"
        playerTurn.innerHTML="X's turn "
